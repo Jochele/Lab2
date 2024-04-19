@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import ProductList from '@/components/ProductList.vue';
 import AddProductForm from '../components/AddProductForm.vue';
 
 const routes = [
-  {
-    path: '/add-product',
-    name: 'AddProductForm',
-    component: AddProductForm
-  }
+  {path: '/', component: ProductList},
+  {path: '/add-product',  component: AddProductForm},
+
+  
 ];
 
 const router = createRouter({
