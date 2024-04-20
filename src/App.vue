@@ -19,8 +19,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-weight: bold;
   color: #ffffff;
-  background-color: #0b6657;
+  background-color: #604a6d;
 }
 
 nav {
