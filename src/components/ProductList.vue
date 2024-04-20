@@ -74,41 +74,90 @@
         this.showEditModal = false;
       },
       deleteProduct(index) {
-        if (confirm("Are you sure you want to delete this product?")) {
-          this.$store.dispatch('deleteProduct', index);
-        }
-      },
-      goToAddProduct() {
-        this.$router.push('/add');
-      },
+      this.$store.dispatch('deleteProduct', index);
     },
-  };
-  </script>
-  
-  <style>
-  .product-table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .product-table th,
-  .product-table td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  .product-table th {
-    background-color: #6c3dda;
-  }
-  
-  .alert-success {
-    text-align: center;
-    font-size: 20px;
-    color: green;
-  }
-  
-  .message {
-    margin: 0;
-  }
-  </style>
+    goToAddProduct() {
+      this.$router.push('/add');
+    },
+  },
+};
+</script>
+
+<style scoped>
+.header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.product-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.product-table th,
+.product-table td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+.product-table th {
+  background-color: saddlebrown;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.add-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.edit-button, .delete-button {
+  padding: 8px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #3498db;
+}
+
+.delete-button:hover {
+  background-color: #e74c3c;
+}
+
+.alert-success {
+  text-align: center;
+  font-size: 20px;
+  color: #4CAF50;
+  margin-top: 20px;
+}
+
+.message {
+  margin: 0;
+}
+</style>
