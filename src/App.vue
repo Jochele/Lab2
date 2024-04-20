@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <nav>
+      <router-link to="/">Product List</router-link> |
       <router-link to="/add-product">Add Product</router-link>
     </nav>
     <router-view/>
