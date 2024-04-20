@@ -54,32 +54,39 @@
       };
     },
     methods: {
-      editProduct(product) {
-        this.selectedProduct = product;
-        this.showEditModal = true;
-      },
-      updateName(value) {
-        this.selectedProduct.name = value;
-      },
-      updateDescription(value) {
-        this.selectedProduct.description = value;
-      },
-      updatePrice(value) {
-        this.selectedProduct.price = value;
-      },
-      updateProduct() {
-        this.showEditModal = false;
-      },
-      cancelEdit() {
-        this.showEditModal = false;
-      },
-      deleteProduct(index) {
-      this.$store.dispatch('deleteProduct', index);
-    },
-    goToAddProduct() {
-      this.$router.push('/add');
-    },
+  editProduct(product) {
+    this.selectedProduct = product;
+    this.showEditModal = true;
   },
+  updateName(value) {
+    this.selectedProduct.name = value;
+  },
+  updateDescription(value) {
+    this.selectedProduct.description = value;
+  },
+  updatePrice(value) {
+    this.selectedProduct.price = value;
+  },
+  updateProduct() {
+    this.showEditModal = false;
+  },
+  cancelEdit() {
+    this.showEditModal = false;
+  },
+  confirmDelete(index) {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.deleteProduct(index);
+    }
+  },
+  deleteProduct(index) {
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.$store.dispatch('deleteProduct', index);
+    }
+  },
+  goToAddProduct() {
+    this.$router.push('/add');
+  },
+},
 };
 </script>
 
